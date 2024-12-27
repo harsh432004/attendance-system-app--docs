@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deploy Real-Time Attendance System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Deploy Real-Time Attendance System on AWS EC2 Instance</h1>
+        <p>Follow this step-by-step guide to deploy your Streamlit-webrtc app in AWS EC2.</p>
+    </header>
+    <main>
+        <section>
+            <h2>1. Setting up Code for Deployment</h2>
+            <ol>
+                <li>Create a directory: <code>mkdir attendance_system_app</code></li>
+                <li>Navigate to the folder: <code>cd attendance_system_app</code></li>
+                <li>Create a virtual environment: <code>python -m venv virtualenv</code></li>
+                <li>Activate the virtual environment:
+                    <ul>
+                        <li>For Windows (Git Bash): <code>source virtualenv/Scripts/activate</code></li>
+                        <li>For Linux/Mac: <code>source virtualenv/bin/activate</code></li>
+                    </ul>
+                </li>
+                <li>Create an <code>app</code> directory and copy your application code.</li>
+                <li>Install required packages: <code>pip install -r requirements.txt</code></li>
+                <li>Run the application: <code>streamlit run Home.py</code></li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>2. Configure Streamlit-webrtc for Cloud</h2>
+            <ul>
+                <li>Update your code to configure the STUN server.</li>
+                <li>Create a bash file <code>configure.sh</code> with Apache2 virtual host configuration.</li>
+                <li>Create and run <code>main.sh</code> to automate the deployment.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>3. Push Code to GitHub</h2>
+            <ol>
+                <li>Create a new GitHub repository.</li>
+                <li>Push your local code using Git commands.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>4. Deploy on AWS EC2</h2>
+            <ol>
+                <li>Create an EC2 instance with Ubuntu OS.</li>
+                <li>Connect to the instance and update the system.</li>
+                <li>Install and configure Apache2.</li>
+                <li>Clone your repository and install required packages.</li>
+                <li>Run the Streamlit app and configure inbound rules for HTTP/HTTPS.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>5. Configure HTTPS with Apache2</h2>
+            <ol>
+                <li>Run the <code>configure.sh</code> file to set up HTTPS.</li>
+                <li>Restart the Apache2 server.</li>
+                <li>Update inbound rules for HTTPS traffic.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>6. Use PM2 for Job Management</h2>
+            <ul>
+                <li>Install <code>pm2</code> using npm: <code>npm install pm2 -g</code></li>
+                <li>Start the app: <code>pm2 start "streamlit run Home.py" --name "Attendance App"</code></li>
+                <li>Ensure continuous execution with <code>pm2 startup</code>.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>7. Configure STUN/TURN Server</h2>
+            <ul>
+                <li>Install and configure <code>coturn</code>.</li>
+                <li>Set up ports and update inbound rules for the TURN server.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Attendance System App. All rights reserved.</p>
+    </footer>
+</body>
+</html>
