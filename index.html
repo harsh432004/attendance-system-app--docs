@@ -13,21 +13,7 @@
     </header>
     <main>
       <section>
-        <h2>1. Configure your WebApp for Cloud</h2>
-        <ul>
-          <li>Update your code to configure the STUN server.</li>
-          <li>
-            Create a bash file <code>configure.sh</code> with Apache2 virtual
-            host configuration.
-          </li>
-          <li>
-            Create and run <code>main.sh</code> to automate the deployment.
-          </li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>2. Push Code to GitHub</h2>
+        <h2>1. Push Code to GitHub</h2>
         <ol>
           <li>Create a new GitHub repository.</li>
           <li>Push your local code using Git commands.</li>
@@ -35,7 +21,7 @@
       </section>
 
       <section>
-        <h2>3. Deploy on AWS EC2</h2>
+        <h2>2. Deploy on AWS EC2</h2>
         <ol>
           <li>Create an EC2 instance with Ubuntu OS.</li>
           <li>Connect to the instance and update the system.</li>
@@ -48,7 +34,7 @@
       </section>
 
       <section>
-        <h2>4. Configure HTTPS with Apache2</h2>
+        <h2>3. Configure HTTPS with Apache2</h2>
         <h3>Create file and Include this code in your configure.sh file</h3>
         <ol>
           <li>Run the <code>echo "
@@ -87,7 +73,7 @@
       </section>
 
       <section>
-        <h2>5. Use PM2 for Job Management</h2>
+        <h2>4. Use PM2 for Job Management</h2>
         <ul>
           <li>
             Install <code>pm2</code> using npm: <code>npm install pm2 -g</code>
@@ -105,7 +91,6 @@
       <section>
         <h2>7. Configure STUN/TURN Server</h2>
         <ul>
-          <li>Install and configure <code>coturn</code>.</li>
           <li>Set up ports and update inbound rules for the TURN server.</li>
         </ul>
       </section>
